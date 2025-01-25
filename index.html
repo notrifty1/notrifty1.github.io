@@ -61,20 +61,15 @@
             font-size: 1rem;
             font-weight: 600;
             color: #fff;
-            background-color: #6c757d;
+            background-color: #007bff; /* Changed to blue */
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.2s, background-color 0.2s;
         }
 
-        .donate:hover {
-            background-color: #5a6268;
-            transform: scale(1.05);
-        }
-
-        .buy-letter:hover {
-            background-color: #495057;
+        .donate:hover, .buy-letter:hover {
+            background-color: #0056b3; /* Blue hover effect */
             transform: scale(1.05);
         }
 
@@ -130,7 +125,7 @@
             font-size: 1rem;
             font-weight: 600;
             color: #fff;
-            background-color: #007bff;
+            background-color: #007bff; /* Changed to blue */
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -138,7 +133,7 @@
         }
 
         #contact-section .contact:hover {
-            background-color: #0056b3;
+            background-color: #0056b3; /* Blue hover effect */
             transform: scale(1.05);
         }
     </style>
@@ -148,8 +143,8 @@
     <p></p>
 
     <div class="actions">
-        <button class="Support!" onclick="alert('Thank you for your support!')">Donate Money</button>
-        <button class="buy-Certificate" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'});">Buy a Letter</button>
+        <button class="donate" onclick="alert('Thank you for your support!')">Donate Money</button>
+        <button class="buy-letter" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'});">Buy a Letter</button>
     </div>
 
     <div class="socials">
