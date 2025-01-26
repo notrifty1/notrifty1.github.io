@@ -110,6 +110,7 @@
         .screenshots {
             margin-top: 4rem;
             display: flex;
+            flex-wrap: wrap;
             gap: 1rem;
             justify-content: center;
             width: 100%;
@@ -117,7 +118,6 @@
 
         .screenshot {
             width: 22%;
-            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -125,14 +125,7 @@
         .screenshot img {
             width: 100%;
             height: auto;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .screenshot p {
-            padding: 1rem;
-            text-align: center;
-            background-color: #f1f1f1;
-            border-radius: 0 0 8px 8px;
+            border-radius: 8px;
         }
 
         #contact-section {
@@ -184,26 +177,25 @@
     <!-- Section for screenshots -->
     <div class="screenshots">
         <div class="screenshot">
-            <img src="https://github.com/notrifty1/notrifty1.github.io/raw/main/IMAGE%202025-01-26%2011:50:04.jpg" alt="Screenshot 1">
-            <p>Screenshot 1</p>
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:04.jpg" alt="Screenshot 1">
         </div>
         <div class="screenshot">
-            <img src="https://github.com/notrifty1/notrifty1.github.io/raw/main/IMAGE%202025-01-26%2011:50:10.jpg" alt="Screenshot 2">
-            <p>Screenshot 2</p>
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:10.jpg" alt="Screenshot 2">
+        </div>
+    </div>
+
+    <div class="screenshots">
+        <div class="screenshot">
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:13.jpg" alt="Screenshot 3">
         </div>
         <div class="screenshot">
-            <img src="https://github.com/notrifty1/notrifty1.github.io/raw/main/IMAGE%202025-01-26%2011:50:13.jpg" alt="Screenshot 3">
-            <p>Screenshot 3</p>
-        </div>
-        <div class="screenshot">
-            <img src="https://github.com/notrifty1/notrifty1.github.io/raw/main/IMAGE%202025-01-26%2011:50:17.jpg" alt="Screenshot 4">
-            <p>Screenshot 4</p>
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:17.jpg" alt="Screenshot 4">
         </div>
     </div>
 
     <div id="contact-section">
         <h2>Contact Me to Buy a Certificate</h2>
-        <button class="contact" onclick="alert('Contact me at [Your Email] to buy a letter.')">Contact Me</button>
+        <button class="contact" onclick="window.location.href='https://t.me/riftysIPALibrary'">Contact Me</button>
     </div>
 
     <footer></footer>
