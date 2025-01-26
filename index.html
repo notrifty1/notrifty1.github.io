@@ -26,6 +26,69 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
+        p {
+            font-size: 1.2rem;
+            color: #d1d1d1;
+            margin: 0;
+        }
+
+        .actions {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .support, .buy-letter {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .support:hover, .buy-letter:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .socials {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .socials a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .socials a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .socials img {
+            width: 24px;
+            height: 24px;
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Section for screenshots */
         .screenshots {
             margin-top: 4rem;
             display: flex;
@@ -33,6 +96,7 @@
             gap: 1rem;
             justify-content: center;
             width: 100%;
+            position: relative;
         }
 
         .screenshot {
@@ -47,31 +111,68 @@
             border-radius: 8px;
         }
 
-        .typing-box-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-top: 2rem;
-            justify-content: center;
+        .typing-box {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: none; /* Hidden until triggered */
         }
 
-        .typing-box {
-            max-width: 400px;
-            padding: 1rem;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            font-size: 1rem;
-            line-height: 1.5;
+        #contact-section {
+            margin-top: 8rem;
+            text-align: center;
+            padding: 2rem;
+            background-color: #1c1e2b;
+            width: 100%;
+        }
+
+        #contact-section h2 {
             color: #fff;
-            font-family: 'Roboto Mono', monospace;
-            overflow: hidden;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #contact-section .contact {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #contact-section .contact:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <h1>Riftys Site</h1>
 
+    <div class="actions">
+        <button class="support" onclick="alert('Thank you for your support!')">Support Me</button>
+        <button class="buy-letter" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'});">Buy a Letter</button>
+    </div>
+
+    <div class="socials">
+        <a href="https://github.com/yourusername" target="_blank"><img src="https://simpleicons.org/icons/github.svg" alt="GitHub"></a>
+        <a href="https://t.me/riftysIPALibrary" target="_blank"><img src="https://simpleicons.org/icons/telegram.svg" alt="Telegram"></a>
+    </div>
+
+    <!-- Section for screenshots -->
     <div class="screenshots">
         <div class="screenshot">
             <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:04.jpg" alt="Screenshot 1">
@@ -79,10 +180,9 @@
         <div class="screenshot">
             <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:10.jpg" alt="Screenshot 2">
         </div>
-    </div>
-
-    <div class="typing-box-container">
-        <div class="typing-box" id="typing-box"></div>
+        <div class="typing-box" id="typing-box">
+            <span id="typing-text"></span>
+        </div>
     </div>
 
     <div class="screenshots">
@@ -94,29 +194,33 @@
         </div>
     </div>
 
+    <div id="contact-section">
+        <h2>Contact Me to Buy a Certificate</h2>
+        <button class="contact" onclick="window.location.href='https://t.me/riftysIPALibrary'">Contact Me</button>
+    </div>
+
+    <footer></footer>
+
     <script>
-         
-        const textContent = "Welcome to my site! As you scroll, this text appears dynamically to guide you through the page.";
-
-         
+        const text = "Welcome! This is where you can explore what I have to offer. Scroll further to see more.";
+        const typingText = document.getElementById("typing-text");
         const typingBox = document.getElementById("typing-box");
+        let index = 0;
 
-         
-        let currentTextIndex = 0;
-
-         
-        const typeText = () => {
-            if (currentTextIndex < textContent.length) {
-                typingBox.textContent += textContent[currentTextIndex];
-                currentTextIndex++;
-            }
-        };
-
-         
         window.addEventListener("scroll", () => {
-            const boxPosition = typingBox.getBoundingClientRect();
-            if (boxPosition.top < window.innerHeight && currentTextIndex < textContent.length) {
-                typeText();
+            const scrollPos = window.scrollY;
+            const triggerPos = document.querySelector(".screenshots").offsetTop - window.innerHeight / 2;
+
+            if (scrollPos > triggerPos && typingBox.style.display !== "block") {
+                typingBox.style.display = "block";
+                const typingInterval = setInterval(() => {
+                    if (index < text.length) {
+                        typingText.textContent += text[index];
+                        index++;
+                    } else {
+                        clearInterval(typingInterval);
+                    }
+                }, 50);
             }
         });
     </script>
