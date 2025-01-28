@@ -26,13 +26,14 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .actions {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1.5rem;
+        p {
+            font-size: 1.2rem;
+            color: #d1d1d1;
+            margin: 0;
         }
 
-        .support, .buy-letter {
+        .btn {
+            margin-top: 2rem;
             padding: 0.8rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
@@ -44,7 +45,30 @@
             transition: transform 0.2s, background-color 0.2s;
         }
 
-        .support:hover, .buy-letter:hover {
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .actions {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .support, .buy-letter, .add-repo {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .support:hover, .buy-letter:hover, .add-repo:hover {
             background-color: #0056b3;
             transform: scale(1.05);
         }
@@ -82,20 +106,13 @@
             color: rgba(255, 255, 255, 0.8);
         }
 
-        /* Section for screenshots and text */
-        .section {
-            margin-top: 4rem;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
+        /* Section for screenshots */
         .screenshots {
+            margin-top: 4rem;
             display: flex;
-            justify-content: center;
-            gap: 1rem;
             flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
             width: 100%;
         }
 
@@ -111,21 +128,8 @@
             border-radius: 8px;
         }
 
-        .typing-box {
-            margin: 2rem 0;
-            width: 60%;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
-
         #contact-section {
-            margin-top: 8rem;
+            margin-top: 8rem; /* Moved way down */
             text-align: center;
             padding: 2rem;
             background-color: #1c1e2b;
@@ -157,71 +161,44 @@
     </style>
 </head>
 <body>
-    <h1>Riftys Site</h1>
+    <h1>Rifty's Site</h1>
+    <p></p>
 
     <div class="actions">
-        <button class="support" onclick="alert('You can support me by joining my telegran.')">Support Me</button>
-        <button class="buy-letter" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'});">Buy a Certificate</button>
+        <button class="support" onclick="alert('Thank you for your support!')">Support Me</button>
+        <button class="buy-letter" onclick="document.getElementById('contact-section').scrollIntoView({behavior: 'smooth'});">Buy a Letter</button>
+        <button class="add-repo" onclick="window.location.href='https://raw.githubusercontent.com/notrifty1/riftysrepo/refs/heads/main/reposource.json';">Add Repo to eSign/Feather</button>
     </div>
 
     <div class="socials">
         <a href="https://github.com/yourusername" target="_blank"><img src="https://simpleicons.org/icons/github.svg" alt="GitHub"></a>
-        <a href="https://t.me/riftysIPALibrary" target="_blank"><img src="https://simpleicons.org/icons/telegram.svg" alt="Telegram"></a>
+        <a href="https://telegram.org/yourusername" target="_blank"><img src="https://simpleicons.org/icons/telegram.svg" alt="Telegram"></a>
     </div>
 
-    
-    <div class="section">
-        <div class="screenshots">
-            <div class="screenshot">
-                <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:04.jpg" alt="Screenshot 1">
-            </div>
-            <div class="screenshot">
-                <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:10.jpg" alt="Screenshot 2">
-            </div>
+    <!-- Section for screenshots -->
+    <div class="screenshots">
+        <div class="screenshot">
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:04.jpg" alt="Screenshot 1">
         </div>
-
-         
-        <div class="typing-box" id="typing-box">
-            <span id="typing-text"></span>
+        <div class="screenshot">
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:10.jpg" alt="Screenshot 2">
         </div>
+    </div>
 
-         
-        <div class="screenshots">
-            <div class="screenshot">
-                <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:13.jpg" alt="Screenshot 3">
-            </div>
-            <div class="screenshot">
-                <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:17.jpg" alt="Screenshot 4">
-            </div>
+    <div class="screenshots">
+        <div class="screenshot">
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:13.jpg" alt="Screenshot 3">
+        </div>
+        <div class="screenshot">
+            <img src="https://raw.githubusercontent.com/notrifty1/notrifty1.github.io/main/IMAGE%202025-01-26%2011:50:17.jpg" alt="Screenshot 4">
         </div>
     </div>
 
     <div id="contact-section">
         <h2>Contact Me to Buy a Certificate</h2>
-        <button class="contact" onclick="window.location.href='https://t.me/rifty600'">Contact Me</button>
+        <button class="contact" onclick="window.location.href='https://t.me/riftysIPALibrary'">Contact Me</button>
     </div>
 
     <footer></footer>
-
-    <script>
-        const text = "testing please work";
-        const typingText = document.getElementById("typing-text");
-        let index = 0;
-
-        window.addEventListener("scroll", () => {
-            const triggerPos = document.querySelector(".typing-box").offsetTop - window.innerHeight;
-
-            if (window.scrollY > triggerPos && typingText.textContent === "") {
-                const typingInterval = setInterval(() => {
-                    if (index < text.length) {
-                        typingText.textContent += text[index];
-                        index++;
-                    } else {
-                        clearInterval(typingInterval);
-                    }
-                }, 50);
-            }
-        });
-    </script>
 </body>
 </html>
